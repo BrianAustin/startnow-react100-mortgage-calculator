@@ -11,6 +11,7 @@ export default class App extends React.Component {
       term: '',
       payment: ''
     };
+    
     //event binding for updating state values
     this.updateBalance = this.updateBalance.bind(this);
     this.updateRate = this.updateRate.bind(this);
@@ -23,7 +24,7 @@ export default class App extends React.Component {
   updateBalance(e) {
     this.setState({
       balance: e.target.value
-    })
+    });
   }
 
   updateRate(e) {
@@ -57,7 +58,7 @@ export default class App extends React.Component {
     let payment = this.calculate(balance, rate, term);
     // Now set the value so that the user will see the result
     this.setState({
-      payment: '$' + payment + ' is your payment.'
+      payment: '$' + payment + ' is your monthly payment.'
     });
   }
 
