@@ -68,30 +68,47 @@ export default class App extends React.Component {
       <div className='container'>
         {
           <form className='form-horizontal'>
-            <div className='col-sm-2'>
+            <div className='col-md-2'>
             </div>
             <div className='page-header'>
               <h3>Mortgage Calculator</h3>
             </div>
             <div className='form-group'>
-              <label for='balance' className='col-sm-2 control-label'>Loan Balance</label>
-              <div className='col-sm-5'>
-                <input name='balance' value={this.state.balance} onChange={this.updateBalance} className='form-control input-sm' type='number' placeholder='0' />
+              <label for='balance' className='col-md-2 control-label'>Loan Balance</label>
+              <div className='col-md-5'>
+                <input 
+                  name='balance' 
+                  value={this.state.balance} 
+                  onChange={this.updateBalance} 
+                  className='form-control input-md' 
+                  type='number'
+                  size='1' 
+                  placeholder='0' />
               </div>
             </div>
             <div className='form-group'>
-              <label for='rate' className='col-sm-2 control-label'>Interest Rate (%)</label>
-              <div className='col-sm-5'>
-                <input name='rate' value={this.state.rate} onChange={this.updateRate} className='form-control input-sm' type='number' step='0.01' placeholder='0' />
+              <label for='rate' className='col-md-2 control-label'>Interest Rate (%)</label>
+              <div className='col-md-5'>
+                <input 
+                  name='rate' 
+                  value={this.state.rate} 
+                  onChange={this.updateRate} 
+                  className='form-control input-md' 
+                  type='number' 
+                  step='0.01'
+                  size='1' 
+                  placeholder='0' />
               </div>
             </div>
             <div className='form-group'>
-              <label for='term' className='col-sm-2 control-label'>Loan Term (years)</label>
-              <div className='col-sm-5' type='number'>
-                <select name='term' 
+              <label for='term' className='col-md-2 control-label'>Loan Term (years)</label>
+              <div className='col-md-5' type='number'>
+                <select 
+                  name='term' 
                   value={this.state.term} 
                   onChange={this.updateTerm} 
-                  className='form-control input-sm' 
+                  className='form-control input-md'
+                  size='1' 
                   type='number'>
                     <option value='0'>0</option>
                     <option value='15'>15</option>
@@ -100,14 +117,14 @@ export default class App extends React.Component {
               </div>
             </div>
             <div className='form-group'>
-              <div className='col-sm-offset-2 col-sm-10'>
+              <div className='col-md-offset-2 col-md-10'>
                 <button 
                   name='submit' 
                   className='btn btn-primary' 
                   onClick={this.handleClick}>Calculate</button>
               </div>
             </div>
-            <div id='output' name='output'><p>{this.state.payment}</p></div>
+            <div id='output' name='output' className='d-print-inline-block'><p>{this.state.payment}</p></div>
           </form>
         }
       </div>
